@@ -1,0 +1,375 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px minmax(500px, 600px) 350px;
+    max-width: 1200px;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: white;
+}
+
+.sidebar,
+.feed,
+.rightbar {
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Sidebar Section */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #2f3336;
+    padding: 20px 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background-color: #1a1a1a;
+}
+
+.nav-item span {
+    font-size: 18px;
+}
+
+.nav-item img {
+  width: 24px;
+  height: 24px;
+}
+.floating-post img {
+  width: 24px;
+  height: 24px;
+}
+
+.post-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.post-btn:hover {
+    background-color: #ddd;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.user-section:hover {
+    background-color: #1a1a1a;
+}
+
+.user-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info span {
+    display: block;
+    line-height: 1.2;
+}
+
+.user-info .name {
+    font-weight: bold;
+}
+
+.user-info .handle {
+    color: gray;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-right: none;
+        border-top: 1px solid #2f3336;
+        padding: 0 10px;
+        width: 100%;
+        background-color: black;
+    }
+
+    .logo,
+    .post-btn,
+    .user-section {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        margin-top: 0;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .nav-item span:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-post {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: white;
+        color: black;
+        font-size: 22px;
+        padding: 14px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+}
+
+
+/* Main Feed */
+.profile-container {
+    border-left: 1px solid #2f3336;
+    border-right: 1px solid #2f3336;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Right Sidebr */
+.rightbar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.follow-suggest {
+    border: 1px solid #16181c;
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.follow-suggest h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.follow-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.follow-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.follow-card .info {
+    flex-grow: 1;
+}
+
+.follow-card .name {
+    display: block;
+    font-weight: bold;
+}
+
+.follow-card .handle {
+    color: gray;
+    font-size: 14px;
+}
+
+.follow-btn {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.follow-btn:hover {
+    background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    body {
+        grid-template-columns: 70px 1fr;
+    }
+    .rightbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+      grid-template-columns: 1fr;
+     }
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-right: none;
+        border-top: 1px solid #2f3336;
+        background-color: black;
+      }
+     .feed {
+      margin-bottom: 70px;
+    }
+}
+
+/* Profile Container */
+.profile-container {
+  flex: 1;
+  background: #000;
+  color: white;
+}
+
+.banner {
+  height: 180px;
+  background: url('banner.jpg') center/cover no-repeat;
+}
+
+.profile-header {
+  position: relative;
+  padding: 0 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #000;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+}
+
+.edit-btn {
+  float: right;
+  margin: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-info {
+  padding: 60px 20px 20px;
+}
+
+.username {
+  color: #aaa;
+}
+
+.details {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #333;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.tabs .active {
+  border-bottom: 2px solid #1da1f2;
+  color: #1da1f2;
+}
+
+/* Posts */
+.post {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.post .hashtags {
+  color: #1da1f2;
+}
