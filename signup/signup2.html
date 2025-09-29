@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah 2: Tanggal Lahir</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="signup2.css">
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>Verifikasi Usia Anda</h1>
+        <p class="subtitle">Informasi ini tidak akan ditampilkan secara publik. Ini digunakan untuk memverifikasi usiamu.</p>
+        
+        <form id="dobForm">
+            <div class="dob-group">
+                <div class="select-wrapper">
+                    <label for="day">Tanggal</label>
+                    <select id="day" required>
+                        <option value="" disabled selected>Hari</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <label for="month">Bulan</label>
+                    <select id="month" required>
+                        <option value="" disabled selected>Bulan</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <label for="year">Tahun</label>
+                    <select id="year" required>
+                        <option value="" disabled selected>Tahun</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="age-validation-message" id="ageMessage"></div>
+
+            <button type="submit" class="submit-btn" id="submitBtn" disabled>Lanjut</button>
+
+            <p class="back-link">
+                <a href="signup1.html">Kembali</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="signup2.js"></script>
+</body>
+</html>

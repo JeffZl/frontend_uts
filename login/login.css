@@ -1,0 +1,206 @@
+/* CSS Variables */
+:root {
+    --primary-color: #007bff;
+    --error-color: #dc3545;
+    --background-color: #ffffff;
+    --form-background: #ffffff;
+    --text-color: #333;
+    --label-color: #888;
+    --border-color: #ddd;
+}
+
+/* Styling Dasar Body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Form Utama */
+.auth-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.auth-container h1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    margin-bottom: 30px;
+}
+
+/* Grup Input */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    padding-right: 40px; 
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+    background-color: var(--form-background);
+    padding: 0 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Ikon Mata */
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid var(--label-color);
+    border-radius: 50%;
+    transition: border-color 0.2s ease;
+}
+
+.password-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--label-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+}
+
+.password-toggle.show::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--label-color);
+    transform: rotate(45deg);
+}
+
+/* Pesan Error */
+.error-message {
+    color: var(--error-color);
+    background-color: #fddede;
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    
+    /* untuk animasi */
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out, max-height 0.3s ease-out, margin-bottom 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.error-message.show {
+    opacity: 1;
+    max-height: 50px; 
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* Lupa Password */
+.options {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Login */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* Link ke Halaman Daftar */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,270 @@
+
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --background-color: #ffffff; 
+    --form-background: #ffffff;
+    --text-color: #333;
+    --label-color: #888;
+    --border-color: #ddd;
+    --button-disabled-bg: #ccc;
+    --button-disabled-text: #888;
+}
+
+/* Styling Dasar Body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Form Utama */
+.signup-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Grup Input  */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    padding-right: 40px; 
+}
+
+/* Styling Animasi Label */
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+    background-color: var(--form-background);
+    padding: 0 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Ikon Validasi Real-time untuk Email */
+.validation-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.input-group.is-valid .validation-icon::after {
+    content: '✓';
+    color: var(--success-color);
+}
+
+.input-group.is-invalid .validation-icon::after {
+    content: '✗';
+    color: var(--error-color);
+}
+
+.input-group.is-valid .validation-icon,
+.input-group.is-invalid .validation-icon {
+    display: block;
+}
+
+/* IKON MATA */
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid var(--label-color);
+    border-radius: 50%;
+    transition: border-color 0.2s ease;
+}
+
+.password-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--label-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+}
+
+/* Style untuk ikon mata */
+.password-toggle.show::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--label-color);
+    transform: rotate(45deg);
+    transition: background-color 0.2s ease;
+}
+
+.password-toggle:hover, .password-toggle:hover::before, .password-toggle.show:hover::after {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+
+/* Feedback Aturan Password */
+.password-rules {
+    list-style: none;
+    font-size: 13px;
+    color: var(--label-color);
+    margin-top: -15px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+}
+
+.password-rules li {
+    transition: color 0.2s ease-out;
+}
+
+.password-rules li::before {
+    content: '•';
+    margin-right: 8px;
+    display: inline-block;
+    width: 10px;
+}
+
+.password-rules li.is-met {
+    color: var(--success-color);
+}
+.password-rules li.is-met::before {
+    content: '✓';
+}
+
+/* Pesan untuk Konfirmasi Password */
+.confirm-message {
+    font-size: 13px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    height: 16px;
+}
+.confirm-message.is-valid {
+    color: var(--success-color);
+}
+.confirm-message.is-invalid {
+    color: var(--error-color);
+}
+
+/* Checkbox Syarat & Ketentuan */
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.terms-group input {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.terms-group a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms-group a:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Daftar Dinamis */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--button-disabled-text);
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn.active:hover {
+    opacity: 0.9;
+}
+
+/* LINK LOGIN BARU */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
