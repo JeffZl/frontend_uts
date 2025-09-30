@@ -223,20 +223,32 @@ nav a.nav-item {
     border-bottom: 1px solid #2f3336;
 }
 
-.trend .category {
+.trend-item {
+    padding: .5rem .5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 8px;
+}
+
+.trend-item:hover {
+    background-color: #202327;
+}
+
+.trend-item .category {
     font-size: 13px;
     color: gray;
     display: block;
     margin-bottom: 4px;
 }
 
-.trend .title {
+.trend-item .title {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 3px;
 }
 
-.trend .count {
+.trend-item .count {
     font-size: 13px;
     color: gray;
 }
