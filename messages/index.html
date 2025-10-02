@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Left Sidebar -->
+    <section class="sidebar">
+        <div class="top-section">
+            <div class="logo">
+                <img src="/public/logo.svg" alt="logo">
+            </div>
+            <nav>
+                 <a href="/index.html" class="nav-item">
+                    <img src="/public/icons/house.svg" alt="Home">
+                    <span>Home</span>
+                </a>
+                <a href="/explore/index.html" class="nav-item">
+                    <img src="/public/icons/search.svg" alt="Explore">
+                    <span>Explore</span>
+                </a>
+                <a href="/notifications/index.html" class="nav-item">
+                    <img src="/public/icons/bell.svg" alt="Notifications">
+                    <span>Notifications</span>
+                </a>
+                <a href="/messages/index.html" class="nav-item">
+                    <img src="/public/icons/mail-fill.svg" alt="Messages">
+                    <span>Messages</span>
+                </a>
+                <a href="/profile/index.html" class="nav-item">
+                    <img src="/public/icons/person.svg" alt="Profile">
+                    <span>Profile</span>
+                </a>
+                <a href="/settings/index.html" class="nav-item">
+                    <img src="/public/icons/settings.svg" alt="Settings">
+                    <span>Settings</span>
+                </a>
+                <a href="/template/index.html">
+                    <button class="post-btn">Create Quote</button>
+                </a>
+            </nav>
+        </div>
+
+        <div class="user-section">
+            <img src="https://robohash.org/voluptatibusdoloremquetempore.png?size=50x50&set=set1" alt="User Avatar">
+            <div class="user-info">
+                <span class="name">USER</span>
+                <span class="handle">@user</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Feed -->
+    <main class="feed">
+        <div class="chat-header">Direct Message</div>
+        <div class="dm-sidebar" id="dm-list"></div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <section class="rightbar">
+        <div class="chat-header" id="chat-header">Select a conversation</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Write a message..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
