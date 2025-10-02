@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #007bff;
-    --background-color: #f7f9fc;
-    --form-background: #ffffff;
-    --text-color: #333;
-    --label-color: #888;
-    --border-color: #ddd;
+    --primary-color: #1D9BF0;
+    --background-color: #000000;
+    --form-background: #000000;
+    --text-color: #E7E9EA;
+    --label-color: #71767b;
+    --border-color: #38444d;
 }
 
 /* --- STYLING DASAR --- */
@@ -30,8 +30,8 @@ body {
     background-color: var(--form-background);
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px Hapus2px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
     width: 100%;
     max-width: 450px;
     text-align: center;
@@ -51,7 +51,7 @@ body {
 
 /* --- FORM GROUP & FLOATING LABEL --- */
 .form-group {
-    position: relative; 
+    position: relative;
 }
 
 .form-control {
@@ -60,7 +60,8 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 16px;
-    background-color: var(--form-background);
+    background-color: transparent;
+    color: var(--text-color);
     transition: border-color 0.2s ease-in-out;
 }
 
@@ -104,17 +105,14 @@ label {
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
+    color: #0f1419;
     background-color: var(--primary-color);
     cursor: pointer;
     transition: all 0.2s ease-out;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
 }
 
 .submit-btn:hover {
-    background-color: #0069d9;
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
-    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .back-link {
@@ -124,12 +122,12 @@ label {
 }
 
 .back-link a {
-    color: var(--primary-color);
+    color: var(--label-color);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.2s ease-out;
 }
 
 .back-link a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }

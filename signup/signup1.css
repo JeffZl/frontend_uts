@@ -1,14 +1,14 @@
 :root {
-    --primary-color: #007bff;
+    --primary-color: #1D9BF0;
     --success-color: #28a745;
     --error-color: #dc3545;
-    --background-color: #f7f9fc;
-    --form-background: #ffffff;
-    --text-color: #333;
-    --label-color: #888;
-    --border-color: #ddd;
-    --button-disabled-bg: #e9ecef;
-    --button-disabled-text: #adb5bd;
+    --background-color: #000000;
+    --form-background: #000000;
+    --text-color: #E7E9EA;
+    --label-color: #71767b;
+    --border-color: #38444d;
+    --button-disabled-bg: #202327;
+    --button-disabled-text: #8899a6;
 }
 
 /* --- STYLING DASAR & BODY --- */
@@ -34,8 +34,8 @@ body {
     background-color: var(--form-background);
     padding: 30px 40px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
     width: 100%;
     max-width: 480px;
 }
@@ -59,6 +59,7 @@ body {
     border-radius: 8px;
     font-size: 16px;
     background-color: transparent;
+    color: var(--text-color);
     transition: border-color 0.2s ease-out;
 }
 
@@ -109,20 +110,19 @@ body {
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
 }
 
 .toggle-password.show {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
 }
-
 
 /* --- FEEDBACK ATURAN PASSWORD --- */
 .password-rules {
     list-style: none;
     font-size: 13px;
     color: var(--label-color);
-    margin: -15px 0 25px 5px; /* Jarak disesuaikan */
+    margin: -15px 0 25px 5px;
 }
 
 .password-rules li {
@@ -149,6 +149,7 @@ body {
     font-size: 13px;
     height: 16px;
     margin: -15px 0 25px 5px;
+    color: var(--label-color); 
 }
 .confirm-message.is-valid { color: var(--success-color); }
 .confirm-message.is-invalid { color: var(--error-color); }
@@ -165,7 +166,7 @@ body {
 .terms-group a { color: var(--primary-color); text-decoration: none; }
 .terms-group a:hover { text-decoration: underline; }
 
-.login-link { text-align: center; margin-top: 20px; font-size: 14px; }
+.login-link { text-align: center; margin-top: 20px; font-size: 14px; color: var(--label-color); }
 .login-link a { color: var(--primary-color); font-weight: 500; text-decoration: none; }
 .login-link a:hover { text-decoration: underline; }
 
@@ -184,13 +185,13 @@ body {
 }
 
 .submit-btn.active {
-    color: #fff;
+    color: #0f1419; 
     background-color: var(--primary-color);
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: none;
 }
 
 .submit-btn.active:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
+    opacity: 0.9;
 }

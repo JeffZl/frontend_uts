@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #007bff;
+    --primary-color: #1D9BF0; 
     --error-color: #dc3545;
-    --background-color: #f7f9fc;
-    --form-background: #ffffff;
-    --text-color: #333;
-    --label-color: #888;
-    --border-color: #ddd;
+    --background-color: #000000; 
+    --form-background: #000000; 
+    --text-color: #E7E9EA; 
+    --label-color: #71767b; 
+    --border-color: #38444d; 
 }
 
 /* --- STYLING DASAR & BODY --- */
@@ -31,8 +31,8 @@ body {
     background-color: var(--form-background);
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color); /* Menggunakan variabel border baru */
+    box-shadow: none; /* Shadow tidak terlihat di tema gelap */
     width: 100%;
     max-width: 450px;
     text-align: center;
@@ -63,6 +63,7 @@ body {
     border-radius: 8px;
     font-size: 16px;
     background-color: transparent;
+    color: var(--text-color); /* Pastikan teks yang diketik berwarna terang */
     transition: border-color 0.2s ease-out;
 }
 
@@ -73,7 +74,7 @@ body {
     color: var(--label-color);
     pointer-events: none;
     transition: all 0.2s ease-out;
-    background-color: var(--form-background);
+    background-color: var(--form-background); /* Penting agar memotong border */
     padding: 0 5px;
 }
 
@@ -90,7 +91,7 @@ body {
     color: var(--primary-color);
 }
 
-/* --- IKON MATA (GAYA BARU & KONSISTEN) --- */
+/* --- IKON MATA --- */
 .toggle-password {
     position: absolute;
     top: 50%;
@@ -101,17 +102,17 @@ body {
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
 }
 
 .toggle-password.show {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
 }
 
 /* --- PESAN ERROR --- */
 .error-message {
-    color: var(--error-color);
-    background-color: #fddede;
+    color: #fff;
+    background-color: #581c23;
     border: 1px solid var(--error-color);
     border-radius: 8px;
     padding: 10px;
@@ -137,13 +138,14 @@ body {
     margin: -15px 0 20px 0;
 }
 
-.forgot-password {
+.forgot-password, .signup-link a {
     color: var(--primary-color);
     font-size: 14px;
     text-decoration: none;
+    font-weight: 500;
 }
 
-.forgot-password:hover {
+.forgot-password:hover, .signup-link a:hover {
     text-decoration: underline;
 }
 
@@ -158,26 +160,15 @@ body {
     background-color: var(--primary-color);
     cursor: pointer;
     transition: all 0.2s ease-out;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    opacity: 0.9;
 }
 
 .signup-link {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
-}
-
-.signup-link a {
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.signup-link a:hover {
-    text-decoration: underline;
+    color: var(--label-color);
 }
