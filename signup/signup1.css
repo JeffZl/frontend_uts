@@ -1,18 +1,17 @@
-
 :root {
     --primary-color: #007bff;
     --success-color: #28a745;
     --error-color: #dc3545;
-    --background-color: #ffffff; 
+    --background-color: #f7f9fc;
     --form-background: #ffffff;
     --text-color: #333;
     --label-color: #888;
     --border-color: #ddd;
-    --button-disabled-bg: #ccc;
-    --button-disabled-text: #888;
+    --button-disabled-bg: #e9ecef;
+    --button-disabled-text: #adb5bd;
 }
 
-/* Styling Dasar Body */
+/* --- STYLING DASAR & BODY --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,15 +29,15 @@ body {
     padding: 20px;
 }
 
-/* Container Form Utama */
+/* --- CONTAINER UTAMA --- */
 .signup-container {
     background-color: var(--form-background);
-    padding: 40px;
+    padding: 30px 40px;
     border-radius: 12px;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
 }
 
 .signup-container h1 {
@@ -47,7 +46,7 @@ body {
     font-weight: 600;
 }
 
-/* Grup Input  */
+/* --- GRUP INPUT & FLOATING LABEL --- */
 .input-group {
     position: relative;
     margin-bottom: 25px;
@@ -55,30 +54,21 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 14px;
+    padding: 15px 40px 15px 14px; 
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 16px;
     background-color: transparent;
-    padding-right: 40px; 
+    transition: border-color 0.2s ease-out;
 }
 
-/* Styling Animasi Label */
 .input-group label {
     position: absolute;
     left: 15px;
-    top: 15px;
+    top: 16px;
     color: var(--label-color);
     pointer-events: none;
     transition: all 0.2s ease-out;
-}
-
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 10px;
-    font-size: 12px;
-    color: var(--primary-color);
     background-color: var(--form-background);
     padding: 0 5px;
 }
@@ -88,98 +78,63 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Ikon Validasi Real-time untuk Email */
-.validation-icon {
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+/* --- IKON VALIDASI & IKON MATA --- */
+.validation-icon, .toggle-password {
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
+}
+
+.validation-icon {
     font-size: 1.2rem;
     display: none;
 }
 
-.input-group.is-valid .validation-icon::after {
-    content: '✓';
-    color: var(--success-color);
-}
+.input-group.is-valid .validation-icon::after { content: '✓'; color: var(--success-color); }
+.input-group.is-invalid .validation-icon::after { content: '✗'; color: var(--error-color); }
+.input-group.is-valid .validation-icon, .input-group.is-invalid .validation-icon { display: block; }
 
-.input-group.is-invalid .validation-icon::after {
-    content: '✗';
-    color: var(--error-color);
-}
-
-.input-group.is-valid .validation-icon,
-.input-group.is-invalid .validation-icon {
-    display: block;
-}
-
-/* IKON MATA */
-.password-toggle {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+.toggle-password {
     cursor: pointer;
-    border: 2px solid var(--label-color);
-    border-radius: 50%;
-    transition: border-color 0.2s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
 }
 
-.password-toggle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    border: 2px solid var(--label-color);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.2s ease;
-}
-
-/* Style untuk ikon mata */
-.password-toggle.show::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 1px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--label-color);
-    transform: rotate(45deg);
-    transition: background-color 0.2s ease;
-}
-
-.password-toggle:hover, .password-toggle:hover::before, .password-toggle.show:hover::after {
-    border-color: var(--primary-color);
-    background-color: var(--primary-color);
+.toggle-password.show {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
 }
 
 
-/* Feedback Aturan Password */
+/* --- FEEDBACK ATURAN PASSWORD --- */
 .password-rules {
     list-style: none;
     font-size: 13px;
     color: var(--label-color);
-    margin-top: -15px;
-    margin-bottom: 25px;
-    padding-left: 10px;
+    margin: -15px 0 25px 5px; /* Jarak disesuaikan */
 }
 
 .password-rules li {
+    margin-bottom: 5px;
     transition: color 0.2s ease-out;
 }
 
 .password-rules li::before {
-    content: '•';
+    content: '✗';
+    color: var(--error-color);
     margin-right: 8px;
-    display: inline-block;
-    width: 10px;
+    font-weight: bold;
 }
 
 .password-rules li.is-met {
@@ -189,22 +144,16 @@ body {
     content: '✓';
 }
 
-/* Pesan untuk Konfirmasi Password */
+/* --- PESAN KONFIRMASI PASSWORD --- */
 .confirm-message {
     font-size: 13px;
-    margin-top: -15px;
-    margin-bottom: 25px;
-    padding-left: 10px;
     height: 16px;
+    margin: -15px 0 25px 5px;
 }
-.confirm-message.is-valid {
-    color: var(--success-color);
-}
-.confirm-message.is-invalid {
-    color: var(--error-color);
-}
+.confirm-message.is-valid { color: var(--success-color); }
+.confirm-message.is-invalid { color: var(--error-color); }
 
-/* Checkbox Syarat & Ketentuan */
+/* --- CHECKBOX & LINK --- */
 .terms-group {
     display: flex;
     align-items: center;
@@ -212,29 +161,22 @@ body {
     font-size: 14px;
 }
 
-.terms-group input {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-}
+.terms-group input { margin-right: 10px; width: 16px; height: 16px; }
+.terms-group a { color: var(--primary-color); text-decoration: none; }
+.terms-group a:hover { text-decoration: underline; }
 
-.terms-group a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
+.login-link { text-align: center; margin-top: 20px; font-size: 14px; }
+.login-link a { color: var(--primary-color); font-weight: 500; text-decoration: none; }
+.login-link a:hover { text-decoration: underline; }
 
-.terms-group a:hover {
-    text-decoration: underline;
-}
-
-/* Tombol Daftar Dinamis */
+/* --- TOMBOL SUBMIT --- */
 .submit-btn {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--button-disabled-text);
     background-color: var(--button-disabled-bg);
     cursor: not-allowed;
@@ -249,22 +191,6 @@ body {
 }
 
 .submit-btn.active:hover {
-    opacity: 0.9;
-}
-
-/* LINK LOGIN BARU */
-.login-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.login-link a {
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.35);
 }

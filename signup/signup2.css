@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #007bff;
     --success-color: #28a745;
@@ -100,7 +99,7 @@ body {
 .age-validation-message {
     font-size: 14px;
     margin-bottom: 25px;
-    height: 18px; /* Beri tinggi agar layout tidak bergeser */
+    height: 18px; 
     text-align: center;
 }
 .age-validation-message.is-valid {

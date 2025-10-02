@@ -1,78 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Mengambil semua elemen yang dibutuhkan ---
+    // --- Elemen Form ---
     const form = document.getElementById('signupForm');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const emailGroup = document.getElementById('emailGroup');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
-    const confirmMessage = document.getElementById('confirmMessage');
     const termsCheckbox = document.getElementById('terms');
     const submitBtn = document.getElementById('submitBtn');
-
-    // Elemen untuk aturan password
+    
+    // --- Elemen Validasi & UI ---
+    const confirmMessage = document.getElementById('confirmMessage');
     const ruleLength = document.getElementById('ruleLength');
     const ruleUppercase = document.getElementById('ruleUppercase');
     const ruleNumber = document.getElementById('ruleNumber');
-
-    // Elemen untuk ikon mata
     const togglePassword = document.getElementById('togglePassword');
     const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
 
+    // --- FUNGSI VALIDASI ---
 
-    // --- FUNGSI-FUNGSI VALIDASI ---
-
-    // 1. Validasi Email
-    function validateEmail() {
+    function validateEmailFormat() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (emailInput.value.length === 0) {
             emailGroup.classList.remove('is-valid', 'is-invalid');
             return false;
         }
-        if (emailRegex.test(emailInput.value)) {
-            emailGroup.classList.add('is-valid');
-            emailGroup.classList.remove('is-invalid');
-            return true;
-        } else {
-            emailGroup.classList.add('is-invalid');
-            emailGroup.classList.remove('is-valid');
-            return false;
-        }
+        const isValid = emailRegex.test(emailInput.value);
+        emailGroup.classList.toggle('is-valid', isValid);
+        emailGroup.classList.toggle('is-invalid', !isValid);
+        return isValid;
     }
 
-    // 2. Validasi Aturan Password
     function validatePasswordRules() {
         const value = passwordInput.value;
-        let allRulesMet = true;
+        const hasMinLength = value.length >= 8;
+        const hasUppercase = /[A-Z]/.test(value);
+        const hasNumber = /[0-9]/.test(value);
 
-        // Aturan 1: Panjang minimal 8 karakter
-        if (value.length >= 8) {
-            ruleLength.classList.add('is-met');
-        } else {
-            ruleLength.classList.remove('is-met');
-            allRulesMet = false;
-        }
+        ruleLength.classList.toggle('is-met', hasMinLength);
+        ruleUppercase.classList.toggle('is-met', hasUppercase);
+        ruleNumber.classList.toggle('is-met', hasNumber);
 
-        // Aturan 2: Mengandung huruf besar
-        if (/[A-Z]/.test(value)) {
-            ruleUppercase.classList.add('is-met');
-        } else {
-            ruleUppercase.classList.remove('is-met');
-            allRulesMet = false;
-        }
-
-        // Aturan 3: Mengandung angka
-        if (/[0-9]/.test(value)) {
-            ruleNumber.classList.add('is-met');
-        } else {
-            ruleNumber.classList.remove('is-met');
-            allRulesMet = false;
-        }
-
-        return allRulesMet;
+        return hasMinLength && hasUppercase && hasNumber;
     }
 
-    // 3. Validasi Konfirmasi Password
     function validateConfirmPassword() {
         if (confirmPasswordInput.value.length === 0 && passwordInput.value.length === 0) {
             confirmMessage.textContent = '';
@@ -80,81 +51,64 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
-        if (confirmPasswordInput.value.length > 0 && passwordInput.value === confirmPasswordInput.value) {
-            confirmMessage.textContent = '✓ Password cocok';
-            confirmMessage.className = 'confirm-message is-valid';
-            return true;
-        } else {
-            confirmMessage.textContent = '✗ Password tidak cocok';
-            confirmMessage.className = 'confirm-message is-invalid';
-            return false;
-        }
+        const doPasswordsMatch = passwordInput.value === confirmPasswordInput.value && confirmPasswordInput.value.length > 0;
+        confirmMessage.textContent = doPasswordsMatch ? '✓ Password cocok' : '✗ Password tidak cocok';
+        confirmMessage.className = doPasswordsMatch ? 'confirm-message is-valid' : 'confirm-message is-invalid';
+        return doPasswordsMatch;
     }
 
-    // 4. Fungsi Utama untuk Validasi Keseluruhan Form
-    function validateForm() {
+    function validateFormState() {
         const isNameValid = nameInput.value.trim() !== '';
-        const isEmailValid = validateEmail();
+        const isEmailFormatValid = validateEmailFormat();
         const arePasswordRulesMet = validatePasswordRules();
         const doPasswordsMatch = validateConfirmPassword();
         const areTermsAccepted = termsCheckbox.checked;
+
+        const isFormValid = isNameValid && isEmailFormatValid && arePasswordRulesMet && doPasswordsMatch && areTermsAccepted;
         
-        // Cek kembali kecocokan password karena bisa saja field confirm kosong
-        const finalPasswordMatch = passwordInput.value === confirmPasswordInput.value && passwordInput.value.length > 0;
-
-        if (isNameValid && isEmailValid && arePasswordRulesMet && finalPasswordMatch && areTermsAccepted) {
-            submitBtn.classList.add('active');
-            submitBtn.disabled = false;
-        } else {
-            submitBtn.classList.remove('active');
-            submitBtn.disabled = true;
-        }
+        submitBtn.disabled = !isFormValid;
+        submitBtn.classList.toggle('active', isFormValid);
     }
 
-    // --- FUNGSI UNTUK IKON MATA ---
     function toggleVisibility(inputElement, toggleElement) {
-        if (inputElement.type === 'password') {
-            inputElement.type = 'text';
-            toggleElement.classList.add('show');
-        } else {
-            inputElement.type = 'password';
-            toggleElement.classList.remove('show');
-        }
+        const isPassword = inputElement.type === 'password';
+        inputElement.type = isPassword ? 'text' : 'password';
+        toggleElement.classList.toggle('show', isPassword);
     }
 
-    
     // --- EVENT LISTENERS ---
 
-    // Panggil validateForm setiap kali ada input atau perubahan
-    const allInputs = [nameInput, emailInput, passwordInput, confirmPasswordInput];
-    allInputs.forEach(input => input.addEventListener('keyup', validateForm));
-    termsCheckbox.addEventListener('change', validateForm);
+    const inputsToValidate = [nameInput, emailInput, passwordInput, confirmPasswordInput];
+    inputsToValidate.forEach(input => input.addEventListener('keyup', validateFormState));
+    termsCheckbox.addEventListener('change', validateFormState);
 
-    // Listener untuk ikon mata
-    togglePassword.addEventListener('click', function() {
-        toggleVisibility(passwordInput, this);
-    });
-    toggleConfirmPassword.addEventListener('click', function() {
-        toggleVisibility(confirmPasswordInput, this);
-    });
+    togglePassword.addEventListener('click', () => toggleVisibility(passwordInput, togglePassword));
+    toggleConfirmPassword.addEventListener('click', () => toggleVisibility(confirmPasswordInput, toggleConfirmPassword));
 
-    // Mencegah form di-submit jika tidak valid
-   form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    validateForm(); // Lakukan validasi terakhir sebelum submit
-    if (!submitBtn.disabled) {
-        // --- BARIS BARU DITAMBAHKAN ---
-        // Simpan data dari form ini ke Session Storage
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Mencegah submit jika tombol disabled/via Enter
+        if (submitBtn.disabled) {
+            return; 
+        }
+
+        // Pengecekan email duplikat
+        const users = JSON.parse(localStorage.getItem('socialMediaUsers')) || [];
+        const isEmailTaken = users.some(user => user.email && user.email.toLowerCase() === emailInput.value.trim().toLowerCase());
+        if (isEmailTaken) {
+            alert('Email ini sudah terdaftar. Silakan gunakan email lain atau login.');
+            return; 
+        }
+
+        // Kalo semua aman, simpan data dan lanjutkan
         const userProgress = {
-            name: nameInput.value,
-            email: emailInput.value,
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
             password: passwordInput.value
         };
         sessionStorage.setItem('userProgress', JSON.stringify(userProgress));
-        // --- AKHIR BARIS BARU ---
 
-        // Mengarahkan ke halaman signup2.html
         window.location.href = 'signup2.html';
-      }
     });
 });

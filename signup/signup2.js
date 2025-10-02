@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mengisi dropdown Hari (LOGIKA DIPERBARUI)
+    // Mengisi dropdown Hari 
     function populateDays() {
         const month = monthSelect.value;
         const year = yearSelect.value;

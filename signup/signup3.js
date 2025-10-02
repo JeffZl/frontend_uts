@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         userProgress.interests = selectedInterests;
         sessionStorage.setItem('userProgress', JSON.stringify(userProgress));
 
-        window.location.href = 'signup4.html';
+        window.location.href = 'PertanyaanKeamanan.html';
         }
     });
 

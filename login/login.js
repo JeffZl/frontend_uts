@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Mengambil elemen yang dibutuhkan ---
+    // --- elemen yang dibutuhkan ---
     const loginForm = document.getElementById('loginForm');
     const credentialInput = document.getElementById('credential');
     const passwordInput = document.getElementById('password');
