@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --checking-color: #888;
+    --background-color: #ffffff;
+    --form-background: #ffffff;
+    --text-color: #333;
+    --label-color: #888;
+    --border-color: #ddd;
+    --button-disabled-bg: #ccc;
+    --button-disabled-text: #888;
+}
+
+/* Styling Dasar Body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Form Utama */
+.signup-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.signup-container h1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    margin-bottom: 40px;
+}
+
+/* Grup Input dengan Awalan "@" */
+.input-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input-prefix {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--label-color);
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 40px 14px 35px; 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+/* Animasi Label */
+.input-group label {
+    position: absolute;
+    left: 35px; 
+    top: 15px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+    background-color: var(--form-background);
+    padding: 0 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Ikon Validasi */
+.validation-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.input-group.is-valid .validation-icon::after {
+    content: '✓';
+    color: var(--success-color);
+}
+
+.input-group.is-invalid .validation-icon::after {
+    content: '✗';
+    color: var(--error-color);
+}
+
+.input-group.is-checking .validation-icon::after {
+    content: '...';
+    color: var(--checking-color);
+    font-weight: bold;
+}
+
+.input-group.is-valid .validation-icon,
+.input-group.is-invalid .validation-icon,
+.input-group.is-checking .validation-icon {
+    display: block;
+}
+
+/* Pesan Validasi */
+.validation-message {
+    font-size: 13px;
+    margin-bottom: 30px;
+    height: 16px;
+    text-align: left;
+    padding-left: 5px;
+    color: var(--label-color);
+}
+.validation-message.is-valid {
+    color: var(--success-color);
+}
+.validation-message.is-invalid {
+    color: var(--error-color);
+}
+.validation-message.is-checking {
+    color: var(--checking-color);
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--button-disabled-text);
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Kembali */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.back-link a {
+    color: var(--label-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}

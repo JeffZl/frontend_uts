@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --background-color: #ffffff;
+    --form-background: #ffffff;
+    --text-color: #333;
+    --label-color: #888;
+    --border-color: #ddd;
+    --button-disabled-bg: #ccc;
+    --button-disabled-text: #888;
+}
+
+/* Styling Dasar Body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Form Utama */
+.signup-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.signup-container h1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    margin-bottom: 30px;
+}
+
+/* Grup Dropdown Tanggal Lahir */
+.dob-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; 
+    margin-bottom: 20px;
+}
+
+.select-wrapper {
+    flex: 1; 
+    text-align: left;
+}
+
+.select-wrapper label {
+    font-size: 12px;
+    color: var(--label-color);
+    margin-left: 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.select-wrapper select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Pesan Validasi Usia */
+.age-validation-message {
+    font-size: 14px;
+    margin-bottom: 25px;
+    height: 18px; 
+    text-align: center;
+}
+.age-validation-message.is-valid {
+    color: var(--success-color);
+}
+.age-validation-message.is-invalid {
+    color: var(--error-color);
+}
+
+/* Tombol Lanjut Dinamis */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--button-disabled-text);
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn.active:hover {
+    opacity: 0.9;
+}
+
+/* Link Kembali */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.back-link a {
+    color: var(--label-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <h1>Selamat Datang Kembali</h1>
+        <p class="subtitle">Masuk untuk melanjutkan ke akun Anda.</p>
+        
+        <form id="loginForm" novalidate>
+            <div class="input-group">
+                <input type="text" id="credential" placeholder=" " required>
+                <label for="credential">Email atau Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Password</label>
+                <span class="toggle-password" id="togglePassword"></span>
+            </div>
+
+            <p class="error-message" id="errorMessage"></p>
+            
+            <div class="options">
+                <a href="../LupaPassword/Lupa.html" class="forgot-password">Lupa Password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn">Login</button>
+            
+            <p class="signup-link">
+                Belum punya akun? <a href="../signup/signup1.html">Daftar di sini</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

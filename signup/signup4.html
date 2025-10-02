@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah 4: Buat Username</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="signup4.css">
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>Buat username Anda</h1>
+        <p class="subtitle">Username ini akan menjadi identitas publik Anda. Anda selalu bisa mengubahnya nanti.</p>
+        
+        <form id="usernameForm">
+            <div class="input-group" id="usernameGroup">
+                <span class="input-prefix">@</span>
+                <input type="text" id="username" placeholder=" " required>
+                <label for="username">Username</label>
+                <span class="validation-icon"></span>
+            </div>
+
+            <div class="validation-message" id="validationMessage">
+                Hanya boleh menggunakan huruf, angka, titik (.), dan garis bawah (_).
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn" disabled>Selesai</button>
+
+            <p class="back-link">
+                <a href="signup3.html">Kembali</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="signup4.js"></script>
+</body>
+</html>
