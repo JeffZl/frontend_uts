@@ -19,7 +19,13 @@ async function loadConversations() {
 
 function openChat(id) {
     currentChat = conversations.find(c => c.id === id);
-    document.getElementById("chat-header").innerText = `${currentChat.name} ${currentChat.handle}`;
+    if (window.innerWidth <= 768) {
+        document.body.classList.add("mobile-chat-active");
+        document.getElementById("chat-header").innerHTML = `<button id="backBtn" style="margin-right: 10px;">← Back</button> <br> ${currentChat.name} ${currentChat.handle}`;
+    } else {
+        document.getElementById("chat-header").innerHTML = `${currentChat.name} ${currentChat.handle}`;
+    }
+    
 
     const chatMessages = document.getElementById("chat-messages");
     chatMessages.innerHTML = currentChat.messages.map(msg => `
@@ -27,7 +33,13 @@ function openChat(id) {
             ${msg.text}
         </div>
     `).join("");
+
+    const backBtn = document.getElementById("backBtn");
+    backBtn.addEventListener("click", () => {
+        document.body.classList.remove("mobile-chat-active");
+    });
 }
+
 
 document.getElementById("sendBtn").addEventListener("click", () => {
     const input = document.getElementById("messageInput");
@@ -40,3 +52,4 @@ document.getElementById("sendBtn").addEventListener("click", () => {
 });
 
 loadConversations();
+
