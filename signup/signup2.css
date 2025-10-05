@@ -30,6 +30,14 @@ body {
 }
 
 /* Container Form Utama */
+.logo {
+    width: 50px; 
+    margin-bottom: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto
+}
+
 .signup-container {
     background-color: var(--form-background);
     padding: 40px;
