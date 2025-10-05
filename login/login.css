@@ -31,8 +31,8 @@ body {
     background-color: var(--form-background);
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid var(--border-color); /* Menggunakan variabel border baru */
-    box-shadow: none; /* Shadow tidak terlihat di tema gelap */
+    border: 1px solid var(--border-color); 
+    box-shadow: none;
     width: 100%;
     max-width: 450px;
     text-align: center;
@@ -40,6 +40,7 @@ body {
 
 .auth-container h1 {
     margin-bottom: 10px;
+    margin-top: 10px;
     font-weight: 600;
 }
 
@@ -74,7 +75,7 @@ body {
     color: var(--label-color);
     pointer-events: none;
     transition: all 0.2s ease-out;
-    background-color: var(--form-background); /* Penting agar memotong border */
+    background-color: var(--form-background); 
     padding: 0 5px;
 }
 

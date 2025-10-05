@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Jika login berhasil
             alert(`Login berhasil! Selamat datang kembali, @${foundUser.username}`);
             errorMessage.classList.remove('show');
-            // Arahkan ke halaman utama/dashboard
-            // window.location.href = '/dashboard.html';
+            
+            window.location.href = '../Home/Home.html';
         } else {
             // Jika login gagal
             errorMessage.textContent = 'Email/Username atau password salah.';
