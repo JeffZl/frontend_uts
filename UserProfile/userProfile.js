@@ -37,3 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
         followList.appendChild(div)
     })
 })
+
+// userProfile.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    //Redirect button Edit Profile
+    const editButton = document.querySelector('.edit-btn');
+    if (editButton) {
+        editButton.addEventListener('click', () => {
+            // Mengarahkan ke halaman EditProfile.html
+            window.location.href = '/EditProfile/EditProfile.html'; 
+        });
+    }
+
+});

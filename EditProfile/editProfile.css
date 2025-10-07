@@ -1,0 +1,180 @@
+/* Styling for the Edit Profile Modal Page */
+
+/* Mengambil lebar layar penuh untuk modal */
+.edit-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Background blur/overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+/* Konten Modal di tengah */
+.edit-modal-content {
+    background-color: #000; 
+    width: min(90vw, 600px); /* Maksimal 600px atau 90% lebar viewport */
+    height: 90vh; 
+    border-radius: 16px;
+    overflow-y: auto;
+}
+
+/* Header Modal (Bagian atas dengan tombol) */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #2f3336;
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0 auto 0 20px;
+    font-weight: bold;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal-save-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Bagian Media Edit (Banner dan Foto Profil) */
+.edit-media-section {
+    position: relative;
+    padding-bottom: 70px; /* Ruang untuk foto profil yang menggantung */
+}
+
+.edit-banner {
+    height: 200px;
+    background-color: #333;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-profile-pic {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0; /* Diposisikan di bawah garis banner */
+    left: 20px;
+    transform: translateY(50%); /* Menggeser 50% ke bawah untuk tumpang tindih */
+}
+
+.profile-preview {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #000;
+    object-fit: cover;
+}
+
+/* Overlay untuk tombol kamera/hapus pada media */
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    gap: 15px;
+}
+
+.icon-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.overlay-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(0); /* Ikon diubah menjadi hitam di latar belakang putih/abu-abu */
+}
+
+/* Form Input Styling */
+.edit-form {
+    padding: 0 20px 20px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px 10px 5px 10px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #1da1f2;
+    outline: none;
+}
+
+/* Styling untuk menu item (seperti tanggal lahir) */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #2f3336;
+    cursor: pointer;
+}
+
+.menu-item span:first-child {
+    font-weight: normal;
+}
+
+.menu-item .value {
+    color: #1da1f2;
+}

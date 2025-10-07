@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Your Profile</title>
-    
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile - Cirqulate</title>
+    <link rel="stylesheet" href="editProfile.css">
+    </head>
 <body>
-    
+    <div class="edit-modal-container">
+        <div class="edit-modal-content">
+            
+            <div class="modal-header">
+                <button class="modal-close-btn" onclick="window.location.href='UserProfile.html'">
+                    <img src="/public/icons/x.svg" alt="Close" style="width: 24px; height: 24px; filter: invert(100%);">
+                </button>
+                <h2>Edit profile</h2>
+                <button class="modal-save-btn">Save</button>
+            </div>
+
+            <div class="edit-media-section">
+                <div class="edit-banner">
+                    <img src="/public/icons/banner-edit-placeholder.jpg" alt="Banner Preview" class="banner-preview">
+                    <div class="media-overlay">
+                        <button class="icon-button"><img src="/public/icons/camera.svg" alt="Upload" class="overlay-icon"></button>
+                        <button class="icon-button"><img src="/public/icons/x.svg" alt="Remove" class="overlay-icon"></button>
+                    </div>
+                </div>
+                
+                <div class="edit-profile-pic">
+                    <img src="https://robohash.org/voluptatibusdoloremquetempore.png?size=50x50&set=set1" alt="Profile Preview" class="profile-preview">
+                    <div class="media-overlay">
+                        <button class="icon-button"><img src="/public/icons/camera.svg" alt="Upload" class="overlay-icon"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-form">
+                
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value="jane_doe">
+                </div>
+
+                <div class="input-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio">love flowers🌼</textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Add your location">
+                </div>
+                
+                <div class="input-group">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" placeholder="Add your website">
+                </div>
+
+                <div class="menu-item">
+                    <span>Birth date</span>
+                    <span class="value">September 15, 2006</span>
+                </div>
+                <div class="menu-item">
+                    <span>Create expanded bio</span>
+                </div>
+                <div class="menu-item">
+                    <span>Switch to professional</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
