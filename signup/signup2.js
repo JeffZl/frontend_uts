@@ -133,4 +133,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // --- FUNGSI UNTUK RESPONSIVE PLACEHOLDER ---
+function updatePlaceholdersForMobile() {
+    const mobileBreakpoint = 480; 
+
+    // Ambil elemen option pertama dari setiap dropdown
+    const dayPlaceholder = document.querySelector('#day option:first-child');
+    const monthPlaceholder = document.querySelector('#month option:first-child');
+    const yearPlaceholder = document.querySelector('#year option:first-child');
+
+    if (window.innerWidth <= mobileBreakpoint) {
+        // layar kecil, ubah teks
+        dayPlaceholder.textContent = 'DD';
+        monthPlaceholder.textContent = 'MM';
+        yearPlaceholder.textContent = 'YY';
+    } else {
+        // layar besar, kembalike teks asli
+        dayPlaceholder.textContent = 'Hari';
+        monthPlaceholder.textContent = 'Bulan';
+        yearPlaceholder.textContent = 'Tahun';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updatePlaceholdersForMobile);
+
+window.addEventListener('resize', updatePlaceholdersForMobile);
+
 });

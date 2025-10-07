@@ -30,14 +30,6 @@ body {
 }
 
 /* Container Form Utama */
-.logo {
-    width: 50px; 
-    margin-bottom: 20px; 
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto
-}
-
 .signup-container {
     background-color: var(--form-background);
     padding: 40px;
@@ -49,6 +41,12 @@ body {
     text-align: center;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 50px;
+}
+
 .signup-container h1 {
     margin-bottom: 10px;
     font-weight: 600;
@@ -58,6 +56,7 @@ body {
     font-size: 14px;
     color: var(--label-color);
     margin-bottom: 30px;
+    text-align: justify; /* Membuat teks rata kanan-kiri */
 }
 
 /* Grup Dropdown Tanggal Lahir */
@@ -88,8 +87,8 @@ body {
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--form-background); 
-    color: var(--text-color); /* Warna teks select */
+    background-color: var(--form-background);
+    color: var(--text-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -111,12 +110,8 @@ body {
     height: 18px; 
     text-align: center;
 }
-.age-validation-message.is-valid {
-    color: var(--success-color);
-}
-.age-validation-message.is-invalid {
-    color: var(--error-color);
-}
+.age-validation-message.is-valid { color: var(--success-color); }
+.age-validation-message.is-invalid { color: var(--error-color); }
 
 /* Tombol Lanjut Dinamis */
 .submit-btn {
@@ -138,10 +133,7 @@ body {
     cursor: pointer;
     box-shadow: none;
 }
-
-.submit-btn.active:hover {
-    opacity: 0.9;
-}
+.submit-btn.active:hover { opacity: 0.9; }
 
 /* Link Kembali */
 .back-link {
@@ -149,14 +141,25 @@ body {
     margin-top: 20px;
     font-size: 14px;
 }
-
 .back-link a {
     color: var(--label-color);
     font-weight: 500;
     text-decoration: none;
     transition: color 0.2s ease;
 }
+.back-link a:hover { color: var(--primary-color); }
 
-.back-link a:hover {
-    color: var(--primary-color);
+/* --- STYLING RESPONSIVE --- */
+@media (max-width: 480px) {
+    .signup-container { padding: 30px 25px; }
+    .signup-container h1 { font-size: 1.9rem; }
+    .select-wrapper label { display: none; }
+
+    /* --- TAMBAHKAN KODE DI BAWAH INI --- */
+    .select-wrapper select {
+        background-image: none; /* Menghilangkan ikon panah */
+        padding-right: 14px; /* Menyesuaikan padding karena ikon hilang */
+        text-align: center; /* Membuat teks DD/MM/YYYY di tengah */
+    }
 }
+
