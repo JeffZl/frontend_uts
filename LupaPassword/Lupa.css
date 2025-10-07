@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #1D9BF0;
+    --background-color: #000000;
+    --form-background: #000000;
+    --text-color: #E7E9EA;
+    --label-color: #71767b;
+    --border-color: #38444d;
+}
+
+/* --- STYLING DASAR --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTAINER --- */
+.container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+/* --- FORM GROUP & FLOATING LABEL --- */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--text-color);
+    transition: border-color 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+label {
+    position: absolute;
+    left: 15px; 
+    top: 16px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--form-background);
+    padding: 0 5px;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+/* --- TOMBOL & LINK --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f1419;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.back-link a {
+    color: var(--label-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}

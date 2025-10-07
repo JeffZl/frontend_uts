@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah 4: Pertanyaan Keamanan</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="PertanyaanKeamanan.css"> </head>
+<body>
+
+    <div class="signup-container">
+        <img src="../public/logo.svg" alt="Logo" class="logo">
+        <h1>Buat Kata Keamanan</h1>
+        <p class="subtitle">Ini akan membantu kami memverifikasi identitas Anda jika Anda lupa password.</p>
+        
+       <form id="securityForm">
+            <div class="form-group">
+                
+                <input type="text" id="recoveryPhrase" name="recoveryPhrase" class="form-control" placeholder=" " required>
+                
+                <label for="recoveryPhrase">Masukkan 2 Kata Rahasia Anda</label>
+                
+            </div>
+
+            <p class="form-hint">
+                Gunakan 2 kata yang mudah Anda ingat tapi sulit ditebak orang lain. Kata ini akan digunakan untuk mereset password Anda.
+            </p>
+
+            <button type="submit" class="submit-btn">Lanjutkan</button>
+
+            <p class="back-link">
+                <a href="signup3.html">Kembali</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="PertanyaanKeamanan.js"></script>
+</body>
+</html>

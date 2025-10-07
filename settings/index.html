@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <section class="sidebar">
+    <div class="top-section">
+      <div class="logo">
+        <img src="/public/logo.svg" alt="logo">
+      </div>
+      <nav>
+        <a href="/index.html" class="nav-item">
+          <img src="/public/icons/house.svg" alt="Home">
+          <span>Home</span>
+        </a>
+        <a href="/explore/index.html" class="nav-item">
+          <img src="/public/icons/search.svg" alt="Explore">
+          <span>Explore</span>
+        </a>
+        <a href="/notifications/index.html" class="nav-item">
+          <img src="/public/icons/bell.svg" alt="Notifications">
+          <span>Notifications</span>
+        </a>
+        <a href="/messages/index.html" class="nav-item">
+          <img src="/public/icons/mail-fill.svg" alt="Messages">
+          <span>Messages</span>
+        </a>
+        <a href="/profile/index.html" class="nav-item">
+          <img src="/public/icons/person.svg" alt="Profile">
+          <span>Profile</span>
+        </a>
+        <a href="/settings/index.html" class="nav-item active">
+          <img src="/public/icons/settings.svg" alt="Settings">
+          <span>Settings</span>
+        </a>
+        <a href="/template/index.html">
+          <button class="post-btn">Create Quote</button>
+        </a>
+      </nav>
+    </div>
+
+    <div class="user-section">
+      <img src="https://robohash.org/voluptatibusdoloremquetempore.png?size=50x50&set=set1" alt="User Avatar">
+      <div class="user-info">
+        <span class="name">USER</span>
+        <span class="handle">@user</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Feed -->
+  <main class="feed">
+    <div class="chat-header">Settings</div>
+
+    <div class="settings-section">
+      <h3>Appearance</h3>
+      <div class="setting-item">
+        <span>Theme</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h3>Notifications</h3>
+      <div class="setting-item">
+        <span>Enable Notifications</span>
+        <label class="switch">
+          <input type="checkbox" id="notifToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h3>Account</h3>
+      <button class="btn secondary" id="addAccountBtn">➕ Add Account</button>
+      <button class="btn danger" id="logoutBtn">🚪 Log Out</button>
+    </div>
+  </main>
+
+
+  <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+:root {
+    --primary-color: #1D9BF0; 
+    --error-color: #dc3545;
+    --background-color: #000000; 
+    --form-background: #000000; 
+    --text-color: #E7E9EA; 
+    --label-color: #71767b; 
+    --border-color: #38444d; 
+}
+
+/* --- STYLING DASAR & BODY --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTAINER UTAMA --- */
+.auth-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color); 
+    box-shadow: none;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-container h1 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    margin-bottom: 30px;
+}
+
+/* --- GRUP INPUT & FLOATING LABEL --- */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 40px 15px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--text-color); /* Pastikan teks yang diketik berwarna terang */
+    transition: border-color 0.2s ease-out;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    background-color: var(--form-background); 
+    padding: 0 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+/* --- IKON MATA --- */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
+}
+
+.toggle-password.show {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
+}
+
+/* --- PESAN ERROR --- */
+.error-message {
+    color: #fff;
+    background-color: #581c23;
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.error-message.show {
+    opacity: 1;
+    max-height: 50px; 
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* --- TOMBOL & LINK --- */
+.options {
+    text-align: right;
+    margin: -15px 0 20px 0;
+}
+
+.forgot-password, .signup-link a {
+    color: var(--primary-color);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password:hover, .signup-link a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--label-color);
+}
+
+/* --- STYLING RESPONSIVE --- */
+@media (max-width: 480px) {
+
+    .auth-container h1 {
+        font-size: 1.6rem; 
+        margin-bottom: 15px;
+    }
+
+    .auth-container {
+        padding: 30px 25px; 
+    }
+
+    .subtitle {
+        margin-bottom: 35px;
+    }
+
+    .signup-link {
+        font-size: 13px;
+    }
+}

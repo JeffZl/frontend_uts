@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #1D9BF0;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --background-color: #000000;
+    --form-background: #000000;
+    --text-color: #E7E9EA;
+    --label-color: #71767b;
+    --border-color: #38444d;
+    --button-disabled-bg: #202327;
+    --button-disabled-text: #8899a6;
+}
+
+/* --- STYLING DASAR & BODY --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTAINER UTAMA --- */
+.logo {
+    width: 50px; 
+    margin-bottom: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto
+}
+
+.signup-container {
+    background-color: var(--form-background);
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    width: 100%;
+    max-width: 480px;
+}
+
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* --- GRUP INPUT & FLOATING LABEL --- */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 40px 15px 14px; 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--text-color);
+    transition: border-color 0.2s ease-out;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    background-color: var(--form-background);
+    padding: 0 5px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+/* --- IKON VALIDASI & IKON MATA --- */
+.validation-icon, .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.validation-icon {
+    font-size: 1.2rem;
+    display: none;
+}
+
+.input-group.is-valid .validation-icon::after { content: '✓'; color: var(--success-color); }
+.input-group.is-invalid .validation-icon::after { content: '✗'; color: var(--error-color); }
+.input-group.is-valid .validation-icon, .input-group.is-invalid .validation-icon { display: block; }
+
+.toggle-password {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>');
+}
+
+.toggle-password.show {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2371767b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>');
+}
+
+/* --- FEEDBACK ATURAN PASSWORD --- */
+.password-rules {
+    list-style: none;
+    font-size: 13px;
+    color: var(--label-color);
+    margin: -15px 0 25px 5px;
+}
+
+.password-rules li {
+    margin-bottom: 5px;
+    transition: color 0.2s ease-out;
+}
+
+.password-rules li::before {
+    content: '✗';
+    color: var(--error-color);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.password-rules li.is-met {
+    color: var(--success-color);
+}
+.password-rules li.is-met::before {
+    content: '✓';
+}
+
+/* --- PESAN KONFIRMASI PASSWORD --- */
+.confirm-message {
+    font-size: 13px;
+    height: 16px;
+    margin: -15px 0 25px 5px;
+    color: var(--label-color); 
+}
+.confirm-message.is-valid { color: var(--success-color); }
+.confirm-message.is-invalid { color: var(--error-color); }
+
+/* --- CHECKBOX & LINK --- */
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.terms-group input { margin-right: 10px; width: 16px; height: 16px; }
+.terms-group a { color: var(--primary-color); text-decoration: none; }
+.terms-group a:hover { text-decoration: underline; }
+
+.login-link { text-align: center; margin-top: 20px; font-size: 14px; color: var(--label-color); }
+.login-link a { color: var(--primary-color); font-weight: 500; text-decoration: none; }
+.login-link a:hover { text-decoration: underline; }
+
+/* --- TOMBOL SUBMIT --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--button-disabled-text);
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn.active {
+    color: #0f1419; 
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.submit-btn.active:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* --- STYLING RESPONSIVE --- */
+@media (max-width: 480px) {
+
+    .signup-container {
+        padding: 30px 25px; 
+    }
+
+    .signup-container h1 {
+        font-size: 1.8rem; 
+        margin-bottom: 25px;
+    }
+
+    
+    .password-rules li,
+    .confirm-message,
+    .terms-group,
+    .login-link {
+        font-size: 13px;
+    }
+}

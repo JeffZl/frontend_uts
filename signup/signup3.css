@@ -1,0 +1,189 @@
+:root {
+    --primary-color: #1D9BF0;
+    --success-color: #28a745;
+    --background-color: #000000;
+    --form-background: #000000;
+    --text-color: #E7E9EA;
+    --label-color: #71767b;
+    --border-color: #38444d;
+    --button-disabled-bg: #202327;
+    --button-disabled-text: #8899a6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.logo {
+    width: 50px; 
+    margin-bottom: 20px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto
+}
+
+.signup-container {
+    background-color: var(--form-background);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.signup-container h1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--label-color);
+    margin-bottom: 30px;
+}
+
+.scroll-container {
+    max-height: 255px; 
+    overflow-y: auto;   
+    padding-right: 10px; 
+    margin-bottom: 30px;
+}
+
+/* Grid untuk Kartu Minat */
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+    padding: 5px; 
+}
+
+/* Styling Scrollbar untuk Tema Gelap */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #202327; 
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #536471; 
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #8899a6; 
+}
+
+/* Styling setiap Kartu Minat */
+.interest-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    user-select: none;
+    overflow: hidden;
+}
+
+.interest-card:hover {
+    transform: scale(1.05); 
+    border-color: var(--primary-color);
+    background-color: #101A24; 
+}
+
+.interest-card .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.interest-card .text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.interest-card .checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.2rem;
+    color: #000; 
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform 0.2s ease-out;
+}
+
+.interest-card.selected {
+    border-color: var(--primary-color);
+    background-color: #08243A; 
+}
+
+.interest-card.selected .checkmark {
+    transform: scale(1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--button-disabled-text);
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transition: all 0.2s ease-out;
+}
+
+.submit-btn.active {
+    color: #0f1419;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.skip-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.skip-link a {
+    color: var(--label-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.skip-link a:hover {
+    color: var(--primary-color);
+}

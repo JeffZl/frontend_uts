@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Keamanan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="Verifikasi.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verifikasi Akun Anda</h1>
+        <p class="subtitle" id="promptText">Masukkan 2 kata rahasia yang Anda buat saat pendaftaran.</p>
+        
+        <form id="verifyForm">
+            <div class="form-group">
+                <input type="text" id="recoveryPhrase" name="recoveryPhrase" class="form-control" placeholder=" " required>
+                <label for="recoveryPhrase">2 Kata Rahasia</label>
+            </div>
+            <button type="submit" class="submit-btn">Verifikasi</button>
+            <p class="back-link">
+                <a href="Lupa.html">Kembali</a>
+            </p>
+        </form>
+    </div>
+    <script src="Verifikasi.js"></script>
+</body>
+</html>
