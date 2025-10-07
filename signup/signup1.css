@@ -203,3 +203,24 @@ body {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+
+/* --- STYLING RESPONSIVE --- */
+@media (max-width: 480px) {
+
+    .signup-container {
+        padding: 30px 25px; 
+    }
+
+    .signup-container h1 {
+        font-size: 1.8rem; 
+        margin-bottom: 25px;
+    }
+
+    
+    .password-rules li,
+    .confirm-message,
+    .terms-group,
+    .login-link {
+        font-size: 13px;
+    }
+}
