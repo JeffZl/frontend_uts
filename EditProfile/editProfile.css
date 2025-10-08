@@ -1,5 +1,6 @@
-/* Styling for the Edit Profile Modal Page */
-
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
 /* Mengambil lebar layar penuh untuk modal */
 .edit-modal-container {
     position: fixed;
@@ -17,7 +18,7 @@
 /* Konten Modal di tengah */
 .edit-modal-content {
     background-color: #000; 
-    width: min(90vw, 600px); /* Maksimal 600px atau 90% lebar viewport */
+    width: min(90vw, 600px); 
     height: 90vh; 
     border-radius: 16px;
     overflow-y: auto;
@@ -59,10 +60,10 @@
     cursor: pointer;
 }
 
-/* Bagian Media Edit (Banner dan Foto Profil) */
+/* media edit (Banner dan Foto Profil) */
 .edit-media-section {
     position: relative;
-    padding-bottom: 70px; /* Ruang untuk foto profil yang menggantung */
+    padding-bottom: 70px; 
 }
 
 .edit-banner {
@@ -84,9 +85,9 @@
     width: 100px;
     height: 100px;
     position: absolute;
-    bottom: 0; /* Diposisikan di bawah garis banner */
+    bottom: 0; /* bawah banner*/
     left: 20px;
-    transform: translateY(50%); /* Menggeser 50% ke bawah untuk tumpang tindih */
+    transform: translateY(50%); /* untuk tumpang tindih antara banner dan profil */
 }
 
 .profile-preview {
@@ -97,7 +98,7 @@
     object-fit: cover;
 }
 
-/* Overlay untuk tombol kamera/hapus pada media */
+/* tombol kamera/hapus pada media */
 .media-overlay {
     position: absolute;
     top: 0;
@@ -115,7 +116,7 @@
 .icon-button {
     background: rgba(255, 255, 255, 0.7);
     border: none;
-    border-radius: 50%;
+    border-radius: 40%;
     padding: 10px;
     cursor: pointer;
 }
@@ -123,12 +124,13 @@
 .overlay-icon {
     width: 20px;
     height: 20px;
-    filter: invert(0); /* Ikon diubah menjadi hitam di latar belakang putih/abu-abu */
+    filter: invert(0); /* di latar belakang putih/abu-abuin */
 }
 
 /* Form Input Styling */
 .edit-form {
     padding: 0 20px 20px;
+    margin-top: 80px;
 }
 
 .input-group {
@@ -177,4 +179,12 @@
 
 .menu-item .value {
     color: #1da1f2;
+}
+
+.edit-date-btn {
+  background: none;
+  border: none;
+  color: #1d9bf0;
+  font-size: 18px;
+  cursor: pointer;
 }

@@ -11,8 +11,8 @@
         <div class="edit-modal-content">
             
             <div class="modal-header">
-                <button class="modal-close-btn" onclick="window.location.href='UserProfile.html'">
-                    <img src="/public/icons/x.svg" alt="Close" style="width: 24px; height: 24px; filter: invert(100%);">
+                <button class="modal-close-btn" onclick="window.location.href='/Home/Home.html'">
+                    <img src="/public/logo.svg" alt="Close" style="width: 24px; height: 24px;">
                 </button>
                 <h2>Edit profile</h2>
                 <button class="modal-save-btn">Save</button>
@@ -22,15 +22,15 @@
                 <div class="edit-banner">
                     <img src="/public/icons/banner-edit-placeholder.jpg" alt="Banner Preview" class="banner-preview">
                     <div class="media-overlay">
-                        <button class="icon-button"><img src="/public/icons/camera.svg" alt="Upload" class="overlay-icon"></button>
-                        <button class="icon-button"><img src="/public/icons/x.svg" alt="Remove" class="overlay-icon"></button>
+                        <button class="icon-button"><img src="/public/icons/camera.png" alt="Upload" class="overlay-icon" style="width: 20px; height: 20px;"></button>
+                        <button class="icon-button"><img src="/public/icons/close.png" alt="Remove" class="overlay-icon" style="height: 20px; width: 20px;"></button>
                     </div>
                 </div>
                 
                 <div class="edit-profile-pic">
-                    <img src="https://robohash.org/voluptatibusdoloremquetempore.png?size=50x50&set=set1" alt="Profile Preview" class="profile-preview">
+                    <img src="https://robohash.org/voluptatibusdoloremquetemporepng?size=50x50&set=set1" alt="Profile Preview" class="profile-preview">
                     <div class="media-overlay">
-                        <button class="icon-button"><img src="/public/icons/camera.svg" alt="Upload" class="overlay-icon"></button>
+                        <button class="icon-button"><img src="/public/icons/camera.png" alt="Upload" class="overlay-icon"></button>
                     </div>
                 </div>
             </div>
@@ -48,28 +48,33 @@
                 </div>
                 
                 <div class="input-group">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" placeholder="Add your location">
-                </div>
-                
-                <div class="input-group">
                     <label for="website">Website</label>
                     <input type="text" id="website" placeholder="Add your website">
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item" id="birthdate-display">
                     <span>Birth date</span>
                     <span class="value">September 15, 2006</span>
+                    <button id="edit-date-btn" class="edit-date-btn">></button>
+                </div>
+
+                <div id="birthdate-input-group" class="input-group" style="display: none;">
+                    <label>Birth date</label>
+                    <div class="birthdate-inputs">
+                        <select id="birth-month" class="date-select"></select>
+                        <select id="birth-day" class="date-select"></select>
+                        <select id="birth-year" class="date-select"></select>
+                    </div>
+                <span id="cancel-date-edit" class="cancel-link">Cancel</span>
                 </div>
                 <div class="menu-item">
                     <span>Create expanded bio</span>
-                </div>
-                <div class="menu-item">
-                    <span>Switch to professional</span>
                 </div>
                 
             </div>
         </div>
     </div>
+
+    <script src="EditProfile.js"></script>
 </body>
 </html>
