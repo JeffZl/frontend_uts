@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes</title>
+    <link rel="stylesheet" href="/Following/style.css">
+</head>
+<body>
+  <!-- Left Sidebar -->
+    <section class="sidebar">
+        <div class="top-section">
+            <div class="logo">
+                <img src="/public/logo.svg" alt="logo">
+            </div>
+            <nav>
+                 <a href="/Home/index.html" class="nav-item">
+                    <img src="/public/icons/house-fill.svg" alt="Home">
+                    <span>Home</span>
+                </a>
+                <a href="/explore/index.html" class="nav-item">
+                    <img src="/public/icons/search.svg" alt="Explore">
+                    <span>Explore</span> 
+                </a>
+                <a href="/notifications/index.html" class="nav-item">
+                    <img src="/public/icons/bell.svg" alt="Notifications">
+                    <span>Notifications</span>
+                </a>
+                <a href="/messages/index.html" class="nav-item">
+                    <img src="/public/icons/mail.svg" alt="Messages">
+                    <span>Messages</span>
+                </a>
+                <a href="/profile/index.html" class="nav-item">
+                    <img src="/public/icons/person.svg" alt="Profile">
+                    <span>Profile</span>
+                </a>
+                <a href="/settings/index.html" class="nav-item">
+                    <img src="/public/icons/settings.svg" alt="Settings">
+                    <span>Settings</span>
+                </a>
+                <a href="/template/index.html">
+                    <button class="post-btn">Create Quote</button>
+                </a>
+            </nav>
+        </div>
+
+        <div class="user-section">
+            <img src="https://robohash.org/voluptatibusdoloremquetempore.png?size=50x50&set=set1" alt="User Avatar">
+            <div class="user-info">
+                <span class="name">USER</span>
+                <span class="handle">@user</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Feed -->
+    <main class="feed">
+          <div class="feed-tabs">
+            <a href="/Home/index.html"><button>For You</button></a>
+            <a href="/Following/index.html"><button class="active">Following</button></a>
+          </div>
+
+        <!-- Post Composer -->
+        <div class="composer">
+        <div class="composer-header">
+            <img src="https://robohash.org/user.png?size=40x40" alt="User Avatar" class="avatar">
+            <textarea id="composer-text" placeholder="What's happening?" rows="2"></textarea>
+        </div>
+
+          <div class="composer-footer">
+            <div class="composer-actions">
+                <label for="image-upload" class="image-icon">
+                <img src="/public/icons/image.png" alt="Add Image">
+                </label>
+                <input type="file" id="image-upload" accept="image/*" hidden>
+            </div>
+
+            <button class="post-btn2" disabled>Post</button>
+            </div>
+          </div>
+
+        <!-- Timeline Posts (akan diisi lewat JS) -->
+        <div id="posts"></div>
+
+    </main>
+
+    <!-- Right Sidebar -->
+    <section class="rightbar">
+    <!-- Search -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+    </div>
+
+    <!-- Trending -->
+    <div class="trending">
+        <h3>What's happening</h3>
+        <ul>
+        <li>#DemoIndonesia</li>
+        <li>#17+8</li>
+        <li>Mentri Keuangan</li>
+        </ul>
+    </div>
+
+    <!-- Who to Follow -->
+    <div class="who-to-follow">
+        <h3>Who to follow</h3>
+        <div class="user-suggest">
+        <img src="https://robohash.org/user1.png?size=40x40" alt="User">
+        <div>
+            <span class="name">Thendy</span>
+            <span class="handle">@Thendy</span>
+        </div>
+        <button>Follow</button>
+        </div>
+        <div class="user-suggest">
+        <img src="https://robohash.org/user2.png?size=40x40" alt="User">
+        <div>
+            <span class="name">Jeffly</span>
+            <span class="handle">@Jeffly</span>
+        </div>
+        <button>Follow</button>
+        </div>
+    </div>
+    </section>
+  <script src="/Following/index.js"></script>
+</body>
+
+</html>
