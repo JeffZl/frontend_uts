@@ -203,3 +203,9 @@ body {
 .back-link a:hover {
     color: var(--primary-color);
 }
+
+@media (max-width: 350px) {
+    .validation-message {
+        font-size: 10px;
+    }
+}
