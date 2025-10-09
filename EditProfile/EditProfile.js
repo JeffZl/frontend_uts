@@ -74,4 +74,31 @@ document.addEventListener('DOMContentLoaded', () => {
       yearSelect.value = "";
     });
   }
+
+  const cameraButtons = document.querySelectorAll('.icon-button img[alt="Upload"]');
+
+  cameraButtons.forEach((button, index) => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.style.display = 'none';
+    document.body.appendChild(input);
+
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (index === 0) {
+          document.querySelector('.banner-preview').src = reader.result;
+        } else {
+          document.querySelector('.profile-preview').src = reader.result;
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    button.addEventListener('click', () => input.click());
+  });
 });

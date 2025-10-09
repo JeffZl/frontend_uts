@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cirqulate</title>
+    <link rel="icon" type="image/x-icon" href="/public/logo.svg">
     <link rel="stylesheet" href="userProfile.css">
 </head>
 <body>
-    <!-- Left Sidebar -->
+  <!-- Left Sidebar -->
     <section class="sidebar">
         <div class="top-section">
             <div class="logo">
-                <img src="/public/logo.svg" alt="logo">
+                <a href="/Home/index.html"><img src="/public/logo.svg" alt="logo"></a>
             </div>
             <nav>
-                 <a href="/Home/Home.html" class="nav-item">
+                 <a href="/Home/index.html" class="nav-item">
                     <img src="/public/icons/house.svg" alt="Home">
                     <span>Home</span>
                 </a>
@@ -31,14 +32,14 @@
                     <span>Messages</span>
                 </a>
                 <a href="/profile/index.html" class="nav-item">
-                    <img src="/public/icons/person.svg" alt="Profile">
+                    <img src="/public/icons/person-fill.svg" alt="Profile">
                     <span>Profile</span>
                 </a>
                 <a href="/settings/index.html" class="nav-item">
                     <img src="/public/icons/settings.svg" alt="Settings">
                     <span>Settings</span>
                 </a>
-                <a href="/template/index.html">
+                <a href="/create-quote/index.html">
                     <button class="post-btn">Create Quote</button>
                 </a>
             </nav>
@@ -122,6 +123,8 @@
     </section>
 
 
-    <script src="userProfile.js"></script>
+    <script src="./userProfile.js"></script>
+    <script src="./likedPost.js"></script>
+
 </body>
 </html>
