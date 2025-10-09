@@ -10,7 +10,7 @@ html, body {
 body {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 250px minmax(500px, 600px) 350px;
+  grid-template-columns: 250px 1fr 350px; /* 🔥 disamakan dengan Messages */
   max-width: 1200px;
   justify-content: center;
   height: 100vh;
@@ -152,12 +152,36 @@ nav {
   border-bottom: 1px solid #2f3336;
   cursor: pointer;
   transition: background 0.3s;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background-color: #000; /* default background */
 }
 
 .notification:hover {
   background-color: #1a1a1a;
 }
 
+/* Unread notifications */
+.notification.unread {
+  background-color: #16181c;
+  position: relative;
+}
+
+.notification.unread:hover {
+  background-color: #1d1f23;
+}
+
+.notif-dot {
+  position: absolute;
+  top: 18px;
+  left: 32px;
+  width: 8px;
+  height: 8px;
+  background-color: #1d9bf0;
+  border-radius: 50%;
+}
+
+/* Icon & text */
 .notification-icon {
   width: 40px;
   height: 40px;
@@ -169,6 +193,12 @@ nav {
   justify-content: center;
   font-size: 18px;
   margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .notification-content .type {
@@ -218,6 +248,7 @@ nav {
     border-right: none;
     border-top: 1px solid #2f3336;
     background-color: black;
+    z-index: 100;
   }
 
   .logo,
@@ -246,25 +277,4 @@ nav {
   .feed {
     margin-bottom: 70px;
   }
-
-  /* --- Notifikasi belum dibaca --- */
-.notification.unread {
-  background-color: #16181c;
-  position: relative;
-}
-
-.notification.unread:hover {
-  background-color: #1d1f23;
-}
-
-.notif-dot {
-  position: absolute;
-  top: 18px;
-  left: 32px;
-  width: 8px;
-  height: 8px;
-  background-color: #1d9bf0;
-  border-radius: 50%;
-}
-
 }
