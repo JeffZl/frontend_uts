@@ -146,6 +146,7 @@ nav a.nav-item {
     }
 
     .logo,
+    .create-quote-button,
     .user-section {
         display: none;
     }
@@ -349,3 +350,4 @@ nav a.nav-item {
     }
 
 }
+
