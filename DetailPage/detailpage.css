@@ -190,7 +190,6 @@ nav a.nav-item {
     }
 }
 
-
 /* Main Feed */
 .feed {
     border-left: 1px solid #2f3336;
@@ -352,28 +351,6 @@ nav a.nav-item {
     opacity: 0.8;
 }
 
-/* Post Button */
-.post-btn {
-    background-color: #2f3336; 
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 18px;
-    cursor: not-allowed;
-    transition: background 0.3s;
-    width: auto;         
-    align-self: flex-end;    
-}
-
-.post-btn.active {
-    background-color: #1d9bf0;
-    cursor: pointer;
-}
-
-.post-btn.active:hover {
-    background-color: #1a8cd8;
-}
 
 /* Post Button */
 .post-btn2 {
@@ -428,21 +405,6 @@ nav a.nav-item {
     filter: brightness(0) saturate(100%) invert(55%) sepia(99%) saturate(3294%) hue-rotate(183deg) brightness(95%) contrast(92%);
 }
 
-.post-btn {
-    background-color: #1d9bf0;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.post-btn:hover {
-    background-color: #1a8cd8;
-}
-
 .image-icon img {
     width: 22px;
     height: 22px;
@@ -453,64 +415,6 @@ nav a.nav-item {
 
 .image-icon img:hover {
     filter: brightness(0) saturate(100%) invert(55%) sepia(99%) saturate(3294%) hue-rotate(183deg) brightness(95%) contrast(92%); /* biru saat hover */
-}
-
-.composer .post-btn {
-    background-color: #1d9bf0;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 160px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.composer .post-btn:hover {
-    background-color: #1a8cd8;
-}
-
-
-/* Post Form */
-.post-form {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    border-bottom: 1px solid #2f3336;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-.post-form img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-}
-
-.post-form input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #2f3336;
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    outline: none;
-}
-
-.post-form button {
-    background-color: #1d9bf0;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.post-form button:hover {
-    background-color: #1a8cd8;
 }
 
 /* Timeline Posts */
