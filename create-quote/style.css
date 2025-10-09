@@ -146,7 +146,6 @@ nav a.nav-item {
     }
 
     .logo,
-    .post-btn,
     .user-section {
         display: none;
     }
@@ -348,4 +347,5 @@ nav a.nav-item {
      .feed {
       margin-bottom: 70px;
     }
+
 }
